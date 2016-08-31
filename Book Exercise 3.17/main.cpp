@@ -34,7 +34,11 @@ int main() {
     wind_chill_temp = 35.74 + (0.6215 * temp_input) - (35.75 * pow(wind_speed_input, 0.16)) + (0.4275 * temp_input * pow(wind_speed_input, 0.16));
     
     // O
-    cout << "The wind chill index is " << wind_chill_temp << endl;
+    if (temp_input > -58 && temp_input < 41 && wind_speed_input >= 2.0) {
+        cout << "The wind chill index is " << wind_chill_temp << endl;
+    } else {
+        cout << "The wind or temperature cannot be used for calculating wind chill index. Lucky you." << endl;
+    }
     
     return 0;
     
